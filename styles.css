@@ -1,0 +1,251 @@
+/* Importação da fonte Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Definição das variáveis CSS para facilitar a manutenção e consistência do tema */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;  
+  --accent-color: #e74c3c;     
+  --text-color: #333;          
+  --light-color: #f8f9fa;      
+  --dark-color: #343a40;       
+  --transition: all 0.3s ease;
+}
+
+/* Reset CSS básico para remover margens e paddings padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo base para o corpo da página */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* NAVEGAÇÃO */
+/* Barra de navegação principal */
+ul.nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background-color: var(--secondary-color);
+  padding: 15px 0;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Itens da navegação */
+.nav li {
+  margin: 0 15px;
+}
+
+/* Links da navegação */
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+/* Efeito hover nos links da navegação */
+.nav a:hover {
+  background-color: var(--primary-color);
+}
+
+/* TIPOGRAFIA E ELEMENTOS DE TEXTO */
+/* Estilos comuns para cabeçalhos */
+h1, h2, h3 {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+/* Título principal */
+h1 {
+  font-size: 2.5rem;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* Título secundário */
+h2 {
+  font-size: 2rem;
+}
+
+/* Título terciário */
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Parágrafos */
+p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Texto em negrito */
+strong {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+/* Texto em itálico */
+em {
+  color: var(--accent-color);
+  font-style: italic;
+}
+
+/* SEÇÕES DE CONTEÚDO */
+/* Estilo comum para as seções principais */
+.sobre-mim, .formacao, .portfolio, .contato {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* RESPONSIVIDADE */
+/* Ajustes para telas menores (tablets e celulares) */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  /* Converte menu horizontal para vertical */
+  ul.nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Ajusta espaçamento vertical dos itens do menu */
+  .nav li {
+    margin: 8px 0;
+  }
+  
+  /* Reduz tamanho do título para melhor visualização em telas pequenas */
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ANIMAÇÕES E EFEITOS */
+/* Animação de entrada com fade e movimento */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Aplica animação às seções principais */
+.sobre-mim, .formacao, .portfolio, .contato {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* LINKS E BOTÕES */
+/* Estilo para links gerais (exceto na navegação) */
+a:not(.nav a) {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--primary-color);
+  transition: var(--transition);
+}
+
+/* Efeito hover em links gerais */
+a:not(.nav a):hover {
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+/* Estilo para botões */
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+/* Efeito hover em botões */
+.btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* FORMULÁRIOS */
+/* Container de formulário */
+form {
+  display: grid;
+  gap: 15px;
+  max-width: 600px;
+}
+
+/* Campos de texto e áreas de texto */
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Área de texto */
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Estado de foco para campos de formulário */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* CARDS DE PROJETOS */
+/* Card individual de projeto */
+.projeto {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+/* Efeito hover no card de projeto */
+.projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do projeto */
+.projeto h3 {
+  color: var(--primary-color);
+}
+
+/* RODAPÉ */
+/* Estilo do rodapé */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: var(--dark-color);
+  font-size: 0.9rem;
+}
